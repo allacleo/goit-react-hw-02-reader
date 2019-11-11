@@ -9,7 +9,7 @@ import Publication from './Publication/Publication';
 
 export default class Reader extends Component {
   static propTypes = {
-    publicationIdx: propTypes.number,
+    // publicationIdx: propTypes.number,
     items: propTypes.arrayOf(propTypes.object.isRequired).isRequired,
   };
 
@@ -49,7 +49,10 @@ export default class Reader extends Component {
           publicationIdx={publicationIdx + 1}
           itemsLength={items.length}
         />
-        <Publication publication={items[publicationIdx]} />
+        <Publication
+          publication={items[publicationIdx]}
+          publicationIdx={publicationIdx + 1}
+        />
       </div>
     );
   }
